@@ -1,0 +1,2 @@
+class BoosterSetsController < ApplicationController
+end
