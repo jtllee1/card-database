@@ -4,18 +4,23 @@ require 'nokogiri'
 puts "Running scraper"
 
 url = "https://yugioh.fandom.com/wiki/Legend_of_Blue_Eyes_White_Dragon"
-url = "https://yugioh.fandom.com/wiki/Metal_Raiders"
 
 html_file = open(url).read
 html_doc = Nokogiri::HTML(html_file)
 
-@booster_set = html_doc.at('.page-header__title').text
+@booster_set_name = html_doc.at('.page-header__title').text
 
-puts @booster_set
+puts @booster_set_name
 
-@booster_image = html_doc.at('.image')['href']
+@booster_set_image = html_doc.at('.image')['href']
 
-puts @booster_image
+puts @booster_set_image
+
+@booster_set = BoosterSet.new(
+  name: @booster_set_name,
+  picture: @booster_set_image
+  )
+@booster_set.save!
 
 @data = html_doc.at('.tabbertab').search('tr')
 
@@ -49,8 +54,8 @@ end
 @counter = 1
 
 loop do
-  puts @card_numbers[@counter]
-  puts @card_rarities[@counter]
+  puts @card_number = @card_numbers[@counter]
+  puts @card_rarity = @card_rarities[@counter]
 
   url_extension = @card_urls[@counter]
 
@@ -109,6 +114,28 @@ loop do
   @description = html_doc.search('.cardtablespanrow').at('td.navbox-list').text.strip
 
   puts @description
+
+  @card = Card.new(
+    name: @name,
+    picture: @image,
+    card: @card,
+    attribute: @attribute,
+    type: @type,
+    category: @category,
+    level: @level,
+    atk: @atk,
+    def: @def,
+    description: @description
+    )
+  @card.save!
+
+  @booster_pack = BoosterPack.new(
+    card_number: @card_number,
+    card_rarity: @card_rarity,
+    card_id: @card,
+    booster_set_id: @booster_set
+    )
+  @booster_pack.save!
 
   @counter += 1
 

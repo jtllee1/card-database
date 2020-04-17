@@ -4,6 +4,7 @@ class CreateBoosterPacks < ActiveRecord::Migration[6.0]
       t.integer :card_number
       t.string :card_rarity
       t.references :card, null: false, foreign_key: true
+      t.references :booster_set, null: false, foreign_key: true
 
       t.timestamps
     end

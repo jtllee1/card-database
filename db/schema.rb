@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_17_130029) do
+ActiveRecord::Schema.define(version: 2020_04_17_134809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,26 +19,26 @@ ActiveRecord::Schema.define(version: 2020_04_17_130029) do
     t.integer "card_number"
     t.string "card_rarity"
     t.bigint "card_id", null: false
+    t.bigint "booster_set_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["booster_set_id"], name: "index_booster_packs_on_booster_set_id"
     t.index ["card_id"], name: "index_booster_packs_on_card_id"
   end
 
   create_table "booster_sets", force: :cascade do |t|
     t.string "name"
     t.string "picture"
-    t.bigint "booster_pack_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["booster_pack_id"], name: "index_booster_sets_on_booster_pack_id"
   end
 
   create_table "cards", force: :cascade do |t|
     t.string "name"
     t.string "picture"
     t.string "card"
-    t.string "attribute"
-    t.string "type"
+    t.string "monster_attribute"
+    t.string "monster_type"
     t.string "category"
     t.integer "level"
     t.integer "atk"
@@ -60,6 +60,6 @@ ActiveRecord::Schema.define(version: 2020_04_17_130029) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "booster_packs", "booster_sets"
   add_foreign_key "booster_packs", "cards"
-  add_foreign_key "booster_sets", "booster_packs"
 end
