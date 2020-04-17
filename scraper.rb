@@ -3,20 +3,59 @@ require 'nokogiri'
 
 puts "Running scraper"
 
-# url = "https://yugioh.fandom.com/wiki/Legend_of_Blue_Eyes_White_Dragon"
+url = "https://yugioh.fandom.com/wiki/Legend_of_Blue_Eyes_White_Dragon"
+url = "https://yugioh.fandom.com/wiki/Metal_Raiders"
 
-# html_file = open(url).read
-# html_doc = Nokogiri::HTML(html_file)
+html_file = open(url).read
+html_doc = Nokogiri::HTML(html_file)
 
-# @cards = html_doc.at('#Top_table').search('a')
+@booster_set = html_doc.at('.page-header__title').text
 
-# @cards.each do |card|
-#   puts card.text
-# end
+puts @booster_set
 
-@urls = ["https://yugioh.fandom.com/wiki/Tri-Horned_Dragon", "https://yugioh.fandom.com/wiki/Hane-Hane", "https://yugioh.fandom.com/wiki/Exodia_the_Forbidden_One", "https://yugioh.fandom.com/wiki/Gaia_the_Dragon_Champion", "https://yugioh.fandom.com/wiki/Polymerization", "https://yugioh.fandom.com/wiki/Legendary_Sword", "https://yugioh.fandom.com/wiki/Forest", "https://yugioh.fandom.com/wiki/Two-Pronged_Attack", "https://yugioh.fandom.com/wiki/Dragon_Capture_Jar"]
+@booster_image = html_doc.at('.image')['href']
 
-@urls.each do |url|
+puts @booster_image
+
+@data = html_doc.at('.tabbertab').search('tr')
+
+@title_links = []
+@href_links = []
+
+@data.each do |data|
+  @title = []
+  @href = []
+  data.search('a').each do |data|
+    @title << data.attribute('title')
+    @href << data.attribute('href')
+  end
+  @title_links << @title
+  @href_links << @href
+end
+
+@card_numbers = []
+@card_rarities = []
+@card_urls = []
+
+@title_links.each do |link|
+  @card_numbers << link[0]
+  @card_rarities << link[2]
+end
+
+@href_links.each do |link|
+  @card_urls << link[1]
+end
+
+@counter = 1
+
+loop do
+  puts @card_numbers[@counter]
+  puts @card_rarities[@counter]
+
+  url_extension = @card_urls[@counter]
+
+  url = "https://yugioh.fandom.com#{url_extension}"
+
   html_file = open(url).read
   html_doc = Nokogiri::HTML(html_file)
 
@@ -70,4 +109,9 @@ puts "Running scraper"
   @description = html_doc.search('.cardtablespanrow').at('td.navbox-list').text.strip
 
   puts @description
+
+  @counter += 1
+  if @counter == @card_numbers.length
+    break
+  end
 end
