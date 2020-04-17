@@ -10,10 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_210021) do
+ActiveRecord::Schema.define(version: 2020_04_17_130029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "booster_packs", force: :cascade do |t|
+    t.integer "card_number"
+    t.string "card_rarity"
+    t.bigint "card_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["card_id"], name: "index_booster_packs_on_card_id"
+  end
+
+  create_table "booster_sets", force: :cascade do |t|
+    t.string "name"
+    t.string "picture"
+    t.bigint "booster_pack_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booster_pack_id"], name: "index_booster_sets_on_booster_pack_id"
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.string "name"
+    t.string "picture"
+    t.string "card"
+    t.string "attribute"
+    t.string "type"
+    t.string "category"
+    t.integer "level"
+    t.integer "atk"
+    t.integer "def"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +60,6 @@ ActiveRecord::Schema.define(version: 2020_04_15_210021) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "booster_packs", "cards"
+  add_foreign_key "booster_sets", "booster_packs"
 end
