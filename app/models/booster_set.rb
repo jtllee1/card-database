@@ -1,3 +1,3 @@
 class BoosterSet < ApplicationRecord
-  belongs_to :booster_pack_id
+  has_many :booster_packs
 end

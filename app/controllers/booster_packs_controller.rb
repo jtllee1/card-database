@@ -1,0 +1,2 @@
+class BoosterPacksController < ApplicationController
+end
