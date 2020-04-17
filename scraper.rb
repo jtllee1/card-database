@@ -95,7 +95,7 @@ loop do
 
       end
     else
-      puts @monster_category = "Normal"
+      puts @category = "Normal"
       puts @level = @data_search[3]
       puts @atk = @data_search[4]
       puts @def = @data_search[5]
@@ -111,6 +111,7 @@ loop do
   puts @description
 
   @counter += 1
+
   if @counter == @card_numbers.length
     break
   end
