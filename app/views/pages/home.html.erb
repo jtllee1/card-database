@@ -1,2 +1,7 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<% @booster_sets.each do |booster| %>
+  <p><%= booster.name %></p>
+  <img src="<%= booster.picture %>" alt="Booster Set Image">
+<% end %>
