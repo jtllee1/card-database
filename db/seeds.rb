@@ -3,9 +3,9 @@ require 'nokogiri'
 
 puts "Destroying data"
 
+BoosterPack.destroy_all
 Card.destroy_all
 BoosterSet.destroy_all
-BoosterPack.destroy_all
 
 puts "Finished"
 
