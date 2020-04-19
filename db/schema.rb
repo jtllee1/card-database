@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_04_17_134809) do
   enable_extension "plpgsql"
 
   create_table "booster_packs", force: :cascade do |t|
-    t.integer "card_number"
+    t.string "card_number"
     t.string "card_rarity"
     t.bigint "card_id", null: false
     t.bigint "booster_set_id", null: false

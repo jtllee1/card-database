@@ -16,12 +16,6 @@ puts @booster_set_name
 
 puts @booster_set_image
 
-@booster_set = BoosterSet.new(
-  name: @booster_set_name,
-  picture: @booster_set_image
-  )
-@booster_set.save!
-
 @data = html_doc.at('.tabbertab').search('tr')
 
 @title_links = []
@@ -114,28 +108,6 @@ loop do
   @description = html_doc.search('.cardtablespanrow').at('td.navbox-list').text.strip
 
   puts @description
-
-  @card = Card.new(
-    name: @name,
-    picture: @image,
-    card: @card,
-    attribute: @attribute,
-    type: @type,
-    category: @category,
-    level: @level,
-    atk: @atk,
-    def: @def,
-    description: @description
-    )
-  @card.save!
-
-  @booster_pack = BoosterPack.new(
-    card_number: @card_number,
-    card_rarity: @card_rarity,
-    card_id: @card,
-    booster_set_id: @booster_set
-    )
-  @booster_pack.save!
 
   @counter += 1
 
