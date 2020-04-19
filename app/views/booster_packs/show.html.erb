@@ -1,0 +1,5 @@
+<% @pack.each do |card| %>
+  <p><%= card.card_rarity %></p>
+  <img src="<%= card.card.picture %>" alt="Card Image">
+<% end %>
+

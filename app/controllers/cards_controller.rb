@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:show]
 
-  def index
-    @card = Card.find(params[:format])
+  def show
+    @card = Card.find(params[:id])
   end
 end
