@@ -1,0 +1,8 @@
+<% @booster_packs.each do |booster| %>
+  <%= link_to cards_path(booster.card_id) do %>
+    <p><%= booster.card_number %></p>
+    <p><%= booster.card.name %></p>
+    <p><%= booster.card_rarity %></p>
+    <img src="<%= booster.card.picture %>" alt="Card Image">
+  <% end %>
+<% end %>

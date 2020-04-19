@@ -1,0 +1,6 @@
+<% @booster_sets.each do |booster| %>
+  <%= link_to booster_set_booster_packs_path(booster) do %>
+    <p><%= booster.name %></p>
+    <img src="<%= booster.picture %>" alt="Booster Set Image">
+  <% end %>
+<% end %>

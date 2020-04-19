@@ -1,4 +1,4 @@
 class BoosterPack < ApplicationRecord
-  has_one :booster_set
-  has_one :card
+  belongs_to :booster_set
+  belongs_to :card
 end
