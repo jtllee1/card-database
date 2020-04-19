@@ -1,3 +1,5 @@
+<%= link_to "Open a pack", booster_set_booster_pack_path(id: params[:booster_set_id]) %>
+
 <% @booster_packs.each do |booster| %>
   <%= link_to card_path(booster.card_id) do %>
     <p><%= booster.card_number %></p>
