@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :booster_sets, only: [:index] do
     resources :booster_packs, only: [:index]
   end
-  resources :cards, only: [:index]
+  resources :cards, only: [:show]
 end
