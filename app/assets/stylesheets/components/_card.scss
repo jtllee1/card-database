@@ -1,0 +1,47 @@
+.booster {
+  width: 160px;
+}
+
+.card {
+  width: 320px;
+}
+
+.pack-card {
+  img {
+    width: 160px;
+    height: 216px;
+  }
+}
+
+.pack-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Common {
+  border: 8px solid beige;
+}
+
+.Short.Print {
+  border: 8px solid beige;
+}
+
+.Super.Short.Print {
+  border: 8px solid beige;
+}
+
+.Rare {
+  border: 8px solid gray;
+}
+
+.Super.Rare {
+  border: 8px solid silver;
+}
+
+.Ultra.Rare {
+  border: 8px solid gold;
+}
+
+.Secret.Rare {
+  border: 8px solid cyan;
+}
