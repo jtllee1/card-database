@@ -1,5 +1,8 @@
-<% @pack.each do |card| %>
-  <p><%= card.card_rarity %></p>
-  <img src="<%= card.card.picture %>" alt="Card Image">
-<% end %>
-
+<div class="pack-cards">
+  <% @pack.each do |card| %>
+    <div class="pack-card">
+      <p><%= card.card_rarity %></p>
+      <img src="<%= card.card.picture %>" alt="Card Image" class="<%= card.card_rarity %>">
+    </div>
+  <% end %>
+</div>

@@ -7,7 +7,7 @@ class BoosterPacksController < ApplicationController
 
   def show
     find_booster_packs
-    @commons = @booster_packs.select{|rarity| rarity.card_rarity == "Common"}
+    @commons = @booster_packs.select{|rarity| rarity.card_rarity == "Common" || rarity.card_rarity == "Short Print" || rarity.card_rarity == "Super Short Print"}
     @rares = @booster_packs.select{|rarity| rarity.card_rarity == "Rare"}
     @extra = @booster_packs.reject{|rarity| rarity.card_rarity == "Rare"}
     @pack = []
