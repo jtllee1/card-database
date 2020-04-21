@@ -1,10 +1,13 @@
-<p>Each main series Booster Pack is guaranteed a Rare, 7 Commons,
-and a ninth card which will either be another Common or a foil
-card (Super Rare rarity or higher).</p>
-
-<% @booster_sets.each do |booster| %>
-  <%= link_to booster_set_booster_packs_path(booster) do %>
-    <p><%= booster.name %></p>
-    <img src="<%= booster.picture %>" alt="Booster Set Image" class="booster">
+<div class="booster-sets">
+  <p>Each main series Booster Pack is guaranteed a Rare, 7 Commons,
+  and a ninth card which will either be another Common or a foil
+  card (Super Rare rarity or higher).</p>
+  <% @booster_sets.each do |booster| %>
+    <%= link_to booster_set_booster_packs_path(booster) do %>
+      <div class="booster-set">
+        <p><%= booster.name %></p>
+        <img src="<%= booster.picture %>" alt="Booster Set Image">
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
