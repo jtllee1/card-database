@@ -1,6 +1,6 @@
-<div class="pack-cards">
+<div class="booster-cards">
   <% @pack.each do |card| %>
-    <div class="pack-card">
+    <div class="booster-card">
       <p><%= card.card_rarity %></p>
       <img src="<%= card.card.picture %>" alt="Card Image" class="<%= card.card_rarity %>">
     </div>

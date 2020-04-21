@@ -1,10 +1,14 @@
 <%= link_to "Open a pack", booster_set_booster_pack_path(id: "opened_pack") %>
 
-<% @booster_packs.each do |booster| %>
-  <%= link_to card_path(booster.card_id) do %>
-    <p><%= booster.card_number %></p>
-    <p><%= booster.card.name %></p>
-    <p><%= booster.card_rarity %></p>
-    <img src="<%= booster.card.picture %>" alt="Card Image" class="pack-card">
+<div class="booster-cards">
+  <% @booster_packs.each do |booster| %>
+    <%= link_to card_path(booster.card_id) do %>
+      <div class="booster-card">
+        <p><%= booster.card_number %></p>
+        <p><%= booster.card.name %></p>
+        <p><%= booster.card_rarity %></p>
+        <img src="<%= booster.card.picture %>" alt="Card Image">
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>

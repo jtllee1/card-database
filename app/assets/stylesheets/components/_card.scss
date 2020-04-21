@@ -1,21 +1,27 @@
-.booster {
-  width: 160px;
+.booster-sets {
+  display: flex;
+  flex-wrap: wrap;
+  .booster-set {
+    img {
+      width: 160px;
+      height: 280px;
+    }
+  }
 }
 
 .card {
   width: 320px;
 }
 
-.pack-card {
-  img {
-    width: 160px;
-    height: 216px;
-  }
-}
-
-.pack-cards {
+.booster-cards {
   display: flex;
   flex-wrap: wrap;
+  .booster-card {
+    img {
+      width: 160px;
+      height: 216px;
+    }
+  }
 }
 
 .Common {
