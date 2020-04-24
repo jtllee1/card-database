@@ -1,20 +1,5 @@
-.carousel-item {
-  text-align: center;
-  transition: transform 2s ease, opacity .5s ease-out;
-  img {
-    width: 160px;
-    height: 280px;
-    margin: 8px;
-  }
-  a:hover {
-    text-decoration: none;
-  }
-}
-
-.carousel-control-prev {
-  width: 60px;
-}
-
-.carousel-control-next {
-  width: 60px;
+.booster-set {
+  width: 160px;
+  height: 280px;
+  margin: 8px;
 }
