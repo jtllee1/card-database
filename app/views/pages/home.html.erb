@@ -2,28 +2,11 @@
 
 <%= link_to "Booster Sets", booster_sets_path  %>
 
-<div class="container">
-  <div id="carouselControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <% @counter = 0 %>
-      <% @booster_sets.each_slice(6) do |boosters| %>
-        <div class="carousel-item <%= "active" if @counter == 0 %>">
-          <% boosters.each do |booster| %>
-            <%= link_to booster_set_booster_packs_path(booster) do  %>
-              <img class="" src="<%= booster.picture %>" alt="">
-            <% end %>
-          <% end %>
-        </div>
-        <% @counter += 1 %>
-      <% end %>
-    </div>
-    <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+<div class="gallery js-flickity"
+  data-flickity-options='{ "wrapAround": true }'>
+  <% @booster_sets.each do |booster| %>
+    <%= link_to booster_set_booster_packs_path(booster) do  %>
+      <img class="booster-set" src="<%= booster.picture %>" alt="">
+    <% end %>
+  <% end %>
 </div>
