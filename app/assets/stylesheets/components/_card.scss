@@ -2,6 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   margin: 16px;
+  text-align: center;
+  justify-content: center;
   .booster-set {
     margin: 16px;
     img {
@@ -16,9 +18,35 @@
 }
 
 .booster-cards {
+  .booster-card {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px;
+    padding: 8px;
+    border: 1px solid black;
+    .card-number {
+      padding: 8px;
+    }
+    .card-name {
+      padding: 8px;
+    }
+    .card-rarity {
+      padding: 8px;
+    }
+    img {
+      width: 160px;
+      height: 216px;
+    }
+  }
+}
+
+.pack-cards {
   display: flex;
   flex-wrap: wrap;
-  .booster-card {
+  margin: 16px;
+  justify-content: center;
+  .pack-card {
+    margin: 16px;
     img {
       width: 160px;
       height: 216px;
