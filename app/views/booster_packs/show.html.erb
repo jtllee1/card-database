@@ -1,8 +1,9 @@
-<div class="booster-cards">
-  <% @pack.each do |card| %>
-    <div class="booster-card">
-      <p><%= card.card_rarity %></p>
-      <img src="<%= card.card.picture %>" alt="Card Image" class="<%= card.card_rarity %>">
-    </div>
-  <% end %>
+<div class="container">
+  <div class="pack-cards">
+    <% @pack.each do |card| %>
+      <div class="pack-card">
+        <img src="<%= card.card.picture %>" alt="Card Image" class="<%= card.card_rarity %>">
+      </div>
+    <% end %>
+  </div>
 </div>

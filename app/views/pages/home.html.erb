@@ -1,12 +1,14 @@
-<h1>Pages#home</h1>
+<h1>Yu-Gi-Oh! Pack Opening Simulator</h1>
 
 <%= link_to "Booster Sets", booster_sets_path  %>
 
-<div class="gallery js-flickity"
-  data-flickity-options='{ "wrapAround": true }'>
-  <% @booster_sets.each do |booster| %>
-    <%= link_to booster_set_booster_packs_path(booster) do  %>
-      <img class="booster-set" src="<%= booster.picture %>" alt="">
+<div class="container">
+  <div class="gallery js-flickity"
+    data-flickity-options='{ "wrapAround": true }'>
+    <% @booster_sets.each do |booster| %>
+      <%= link_to booster_set_booster_packs_path(booster) do  %>
+        <img class="gallery-cell" src="<%= booster.picture %>" alt="">
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
