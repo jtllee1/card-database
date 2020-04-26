@@ -1,5 +1,19 @@
+<div class="title inner-border"><h1>Your Pack</h1></div>
+
 <div class="container">
-  <div class="pack-cards">
+  <div class="text inner-border style-border">
+    Each main series Booster Pack is guaranteed a Rare, 7 Commons,
+    and a ninth card which will either be another Common or a foil
+    card (Super Rare rarity or higher).
+  </div>
+</div>
+
+<div class="container">
+  <%= link_to "Open another pack", booster_set_booster_pack_path(id: "opened_pack"), class: "button" %>
+</div>
+
+<div class="container">
+  <div class="pack-cards inner-border style-border">
     <% @pack.each do |card| %>
       <div class="pack-card">
         <img src="<%= card.card.picture %>" alt="Card Image" class="<%= card.card_rarity %>">

@@ -1,7 +1,8 @@
 .booster-sets {
   display: flex;
   flex-wrap: wrap;
-  margin: 16px;
+  margin: 24px;
+  padding: 16px;
   text-align: center;
   justify-content: center;
   .booster-set {
@@ -18,12 +19,14 @@
 }
 
 .booster-cards {
+  margin-top: 24px;
+  margin-bottom: 24px;
   .booster-card {
     display: flex;
     justify-content: space-between;
-    margin: 8px;
+    border-radius: 4px;
+    margin-bottom: 16px;
     padding: 8px;
-    border: 1px solid black;
     .card-number {
       padding: 8px;
     }
@@ -43,10 +46,10 @@
 .pack-cards {
   display: flex;
   flex-wrap: wrap;
-  margin: 16px;
+  margin: 24px;
   justify-content: center;
   .pack-card {
-    margin: 16px;
+    margin: 24px;
     img {
       width: 160px;
       height: 216px;

@@ -1,9 +1,15 @@
-<%= link_to "Open a pack", booster_set_booster_pack_path(id: "opened_pack") %>
+<div class="title inner-border">
+  <h1><%= @booster_packs.first.booster_set.name %></h1>
+</div>
+
+<div class="container">
+  <%= link_to "Open a pack", booster_set_booster_pack_path(id: "opened_pack"), class: "button" %>
+</div>
 
 <div class="container">
   <div class="booster-cards">
     <% @booster_packs.each do |booster| %>
-      <div class="booster-card">
+      <div class="booster-card inner-border style-border">
         <div class="card-number">
           <p><%= booster.card_number %></p>
         </div>
