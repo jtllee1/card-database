@@ -1,31 +1,30 @@
-<div class="container">
-  <div class="card-frame inner-border style-border">
-    <img src="<%= @card.picture %>" alt="Card Image" class="card">
-    <div class="card-data style-border">
-      <div class="card-name">
-        <b>Name:</b> <%= @card.name %>
-      </div>
-      <div class="card-type">
-        <b>Card Type:</b> <%= @card.card %>
-      </div>
-      <div class="attribute">
-        <b>Attribute:</b> <%= @card.monster_attribute %>
-      </div>
-      <div class="type">
-        <b>Type:</b> <%= @card.monster_type %>
-      </div>
-      <div class="level">
-        <b>Level:</b> <%= @card.level %>
-      </div>
-      <div class="atk">
-        <b>Atk:</b> <%= @card.atk %>
-      </div>
-      <div class="def">
-        <b>Def:</b> <%= @card.def %>
-      </div>
-      <div class="description">
-        <b>Description:</b> <%= @card.description %>
-      </div>
+<div class="container card-frame inner-border style-border">
+  <img src="<%= @card.picture %>" alt="Card Image" class="card">
+  <div class="card-data style-border">
+    <div class="card-name">
+      <b>Name:</b> <%= @card.name %>
+    </div>
+    <div class="card-type">
+      <b>Card Type:</b> <%= @card.card %>
+    </div>
+    <div class="attribute">
+      <b>Attribute:</b> <%= @card.monster_attribute %>
+    </div>
+    <div class="type">
+      <b>Type:</b> <%= @card.monster_type %>
+    </div>
+    <div class="level">
+      <b>Level:</b> <%= @card.level %>
+    </div>
+    <div class="atk">
+      <b>Atk:</b> <%= @card.atk %>
+    </div>
+    <div class="def">
+      <b>Def:</b> <%= @card.def %>
+    </div>
+    <div class="description">
+      <b>Description:</b>
+      <br><%= @card.description %>
     </div>
   </div>
 </div>
