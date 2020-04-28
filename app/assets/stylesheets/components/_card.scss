@@ -14,6 +14,26 @@
   }
 }
 
+.card-frame {
+  display: flex;
+  margin-top: 32px;
+  border-radius: 4px;
+  img {
+    margin: 32px 0px 32px 32px;
+  }
+  .card-data {
+    background: rgba(80, 80, 80, 1.0);
+    margin: 32px;
+    padding: 16px;
+    border-radius: 4px;
+  }
+  .description {
+    border-top: 1px solid rgba(100, 100, 100, 0.4);
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+}
+
 .card {
   width: 320px;
 }
