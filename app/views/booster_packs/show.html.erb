@@ -15,9 +15,11 @@
 <div class="container">
   <div class="pack-cards inner-border style-border">
     <% @pack.each do |card| %>
-      <div class="pack-card">
-        <img src="<%= card.card.picture %>" alt="Card Image" class="<%= card.card_rarity %>">
-      </div>
+      <%= link_to card_path(card) do %>
+        <div class="pack-card">
+          <img src="<%= card.card.picture %>" alt="Card Image" class="<%= card.card_rarity %>">
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
