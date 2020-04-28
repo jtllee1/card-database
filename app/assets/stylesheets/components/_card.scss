@@ -86,34 +86,35 @@
     img {
       width: 160px;
       height: 216px;
+      border-radius: 4px;
     }
   }
 }
 
 .Common {
-  border: 8px solid beige;
+  border: 8px solid rgba(100, 80, 50, 1.0);
 }
 
 .Short.Print {
-  border: 8px solid beige;
+  border: 8px solid rgba(100, 80, 50, 1.0);
 }
 
 .Super.Short.Print {
-  border: 8px solid beige;
+  border: 8px solid rgba(100, 80, 50, 1.0);
 }
 
 .Rare {
-  border: 8px solid gray;
+  border: 8px solid rgba(150, 150, 160, 1.0);
 }
 
 .Super.Rare {
-  border: 8px solid silver;
+  border: 8px solid rgba(220, 220, 255, 1.0);
 }
 
 .Ultra.Rare {
-  border: 8px solid gold;
+  border: 8px solid rgba(255, 210, 0, 0.8);
 }
 
 .Secret.Rare {
-  border: 8px solid cyan;
+  border: 8px solid rgba(0, 150, 255, 0.8);
 }
