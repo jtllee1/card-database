@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'nokogiri'
+gem 'turbolinks', '~> 5.2.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
