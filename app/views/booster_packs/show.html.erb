@@ -9,11 +9,11 @@
 </div>
 
 <div class="container">
-  <a href="#pack" class="button" data-turbolinks-action="replace">Open another pack</a>
+  <a href="#pack" id="pack" class="button">Open another pack</a>
 </div>
 
 <div class="container">
-  <div class="pack-cards inner-border style-border" id="pack">
+  <div class="pack-cards inner-border style-border">
     <% @pack.each do |card| %>
       <div class="pack-card">
         <%= link_to card_path(card) do %>
